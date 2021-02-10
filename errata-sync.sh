@@ -4,7 +4,7 @@
 ## Edit variables in errata-import.py first ##
 
 # Get the base path for the script #
-BASE_PATH="$(echo ${0} | sed 's/errata-sync-sshis.sh//')"
+BASE_PATH="$(echo ${0} | sed 's/errata-sync.sh//')"
 
 # Make sure we have English locale
 export LC_TIME="en_US.utf8"
