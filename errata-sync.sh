@@ -14,6 +14,7 @@ DATE=`date +"%Y-%B"`
 
 # Cleanup before download
 cd ${BASE_PATH}
+mkdir -p errata
 rm -rf errata/*.txt
 rm -f ubuntu-errata.xml
 
