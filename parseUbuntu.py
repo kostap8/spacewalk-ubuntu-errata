@@ -1,9 +1,10 @@
 #!/usr/bin/python
 #
-# Author: philipp.schuler@holidaycheck.com
+# Author: philipp.schuler@holidaycheck.com, deynekoaa@gmail.com
 # 
 # Changelog:
 # 
+# 2021-08-25 - Fix CVE regexp
 # 2017-11-06 - Set UTF-8 caracter encoding to import errata from Spacewalk correctly
 # 2015-06-17 - Include errataDate and errataFrom information (pandujar)
 # 2015-02-19 - Apply Reboot Information (C.Stehle)
@@ -73,7 +74,7 @@ class MessageParser(object):
     PKGINFO = "Package Information:"
     ERRATA_SUBJECT="\[USN-(?P<errata_id>\d+-\d+)\] (?P<other_info>.*)"
     ERRATA_PKGS = "\s\s(?P<pkg_filename>.*)\s(?P<pkg_version>.*)"
-    CVE = "(?P<cve>CVE-\d{4}-\d{4})"
+    CVE = "(?P<cve>CVE-\d{4}-\d+)"
 
     erratum_subject_re = re.compile(ERRATA_SUBJECT)
     release_re = re.compile(RELEASE)
