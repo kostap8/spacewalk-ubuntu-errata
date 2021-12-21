@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #
-# Author: philipp.schuler@holidaycheck.com, deynekoaa@gmail.com
+# Author: philipp.schuler@holidaycheck.com
 # 
 # Changelog:
 # 
@@ -278,6 +278,7 @@ def main():
         opt = XML.Element('opt')
         for advisory in parsed_messages:
             adv = XML.SubElement(opt, advisory.getAdvisoryName())
+
             adv.set('description', advisory.errataDesc.strip())
             adv.set('issue_date', advisory.errataDate)
             adv.set('errataFrom', advisory.errataFrom)
